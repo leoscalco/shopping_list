@@ -16,7 +16,7 @@ To run the software you have to install:
 * Selenium;
 * Coverage;
 
-If you use Mac OS, it`s necessary install geckodriver to execute Selenium`s automated tests.
+`If you use Mac OS, it's necessary install geckodriver to execute Selenium's automated tests.`
 
 ## Running the tests
 
