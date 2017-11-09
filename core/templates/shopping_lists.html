@@ -1,0 +1,15 @@
+<ul>
+ {% for list in shopping_lists %}
+ <li>
+
+<h3>
+ <a id="sl_{{list.id}}" href="{% url 'core:shopping_list' list.id %}">{{ list }}</a>
+ </h3>
+ </li>
+ {% empty %}
+ <li>Sem listas de compras adicionadas até agora.</li>
+ {% endfor %}
+ </ul>
+
+<a href="{% url 'core:new_shopping_list' %}">Adicionar nova lista de compras</a><br/>
+<a href="{% url 'core:new_item' %}">Adicionar novo item</a><br/>

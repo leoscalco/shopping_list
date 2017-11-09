@@ -1,0 +1,12 @@
+<h2>Adicionar uma nova lista de compras:</h2>
+
+<form action="{% url 'core:new_shopping_list'%}" method='post'
+ class="form">
+
+{% csrf_token %}
+{{ form.as_p }}
+
+ <button name="submit" ">Adicionar nova lista de compras</button>
+
+ </form>
+Item faltando? <a href="{% url 'core:new_item' %}">Adicione</a><br/>

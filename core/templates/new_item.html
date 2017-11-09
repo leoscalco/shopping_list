@@ -1,0 +1,11 @@
+<h2>Adicionar um novo item para compra:</h2>
+
+<form action="{% url 'core:new_item'%}" method='post'
+ class="form">
+
+{% csrf_token %}
+{{ form.as_p }}
+
+ <button name="submit" ">Adicionar item para compra</button>
+
+ </form>

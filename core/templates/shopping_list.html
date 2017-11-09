@@ -1,0 +1,25 @@
+<h3>
+ {{ shopping_list }}
+ </h3>
+ <a href="{% url 'core:add_item' shopping_list.id %}">Adicionar item à lista</a>
+
+<form action="{% url 'core:already_bought' shopping_list.id %}" method="POST">
+    {% csrf_token %}
+<ul>
+ {% for instanceditem in shopping_list.instanceditem_set.all %}
+         <li>
+         <a href="#">{{instanceditem.item.name}}</a> <br/>
+         Preço: R$ {{instanceditem.price_unit}} <br/>
+         Já comprado?
+         {% if instanceditem.already_bought %}
+            <input type="checkbox" name="bought" value="{{instanceditem.id}}" checked><br>
+         {% else %}
+            <input type="checkbox" name="bought" value="{{instanceditem.id}}"><br>
+         {% endif %}
+         <br/></li>
+ {% empty %}
+ <li>Sem itens adicionados até agora.</li>
+ {% endfor %}
+ </ul>
+ <button type="submit">Salvar já comprados</button>
+</form>
